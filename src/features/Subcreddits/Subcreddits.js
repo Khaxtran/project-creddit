@@ -1,19 +1,15 @@
 import React from 'react';
 import './Subcreddits.css';
-import Card from '../../components/Card/Card';
+import {SubCard} from '../../components/SubCard/SubCard';
 
 export const Subcreddits = () => {
     return (
-        <section>
-            <h2>Subcreddits</h2>
-            <Card className='subcreddit-card'>
+            <SubCard className='subcreddit-card'>
                 <ul className='subcreddit-list'>
                     <li>subname</li>
                     <li>subname</li>
                     <li>subname</li>
                 </ul>
-            </Card>
-        </section>
-        
+            </SubCard>
     )
 }

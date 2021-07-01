@@ -1,12 +1,15 @@
 .body {
   display: flex;
   justify-content: space-between;
+  margin-top: 5rem;
 }
 
 aside {
-  width: 30%;
+  width: 20%;
+  margin-left: 5rem;
 }
 
 main {
   width: 80%;
+  margin: 0rem 5rem;
 }

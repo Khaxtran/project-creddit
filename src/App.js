@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from './features/Header/Header';
 import {Subcreddits} from './features/Subcreddits/Subcreddits';
+import {Home} from './features/Home/Home';
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
           <Subcreddits />
         </aside>
         <main>
-          <form>
-            <input type="text"></input>
-          </form>
+          <Home />
         </main>
       </div>
       
