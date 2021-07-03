@@ -9,7 +9,7 @@ export const Header = () => {
             <div className="logo-container">
                 <FaRedditSquare className='logo-icon'/>
                 <p className='purple-c'>C</p>
-                <p>reddit</p>
+                <p className='reddit-logo'>reddit</p>
             </div>
             <div className='search-section' >
                 <form>

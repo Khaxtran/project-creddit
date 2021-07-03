@@ -46,6 +46,8 @@ form {
 
 .purple-c {
     color: #5A6CB7;
+}
+.reddit-logo, .purple-c {
     font-family: 'Nunito', sans-serif;
     font-size: 2rem;
 }
