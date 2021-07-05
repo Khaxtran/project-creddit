@@ -30,7 +30,7 @@
     align-items: center;
   }
   
-  .left, .center, .right {
+  .left, .right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,13 @@
   .center .time {
     color:rgb(102, 101, 101);
     font-size: 14px;
+  }
+
+  .center {
+    width: 27%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .right button {
