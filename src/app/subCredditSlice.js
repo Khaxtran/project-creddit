@@ -1,4 +1,4 @@
-import {createSlice, createSelector} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import {getSubreddits} from '../api/reddit';
 
 const initialState = {
@@ -33,3 +33,16 @@ export const {
 } = subCredditSlice.actions;
 
 export default subCredditSlice.reducer;
+
+// This is a Redux Thunk that gets subreddits.
+export const fetchSubcreddits = () => async (dispatch) => {
+    try{
+        dispatch(startGetSubcreddits());
+        const subcreddits = await getSubreddits();
+        dispatch(getSubcredditsSuccess(subcreddits));
+    } catch (error) {
+        dispatch(getSubredditsFailed());
+    }
+};
+
+export const selectSubcreddits = state => state.subcreddits.subcreddits;
