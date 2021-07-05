@@ -1,22 +1,47 @@
 import React from 'react';
 import './Post.css';
+import {Comment} from '../Comment/Comment';
 import Skeleton from 'react-loading-skeleton';
 import Card from '../../components/Card/Card';
 import {TiArrowDownOutline, TiArrowUpOutline} from 'react-icons/ti';
 import {RiMessage3Line} from 'react-icons/ri';
  
-export const Post = () => {
+export const Post = (props) => {
+  const {post, onToggleComments} = props;
+  
 
-    const renderComments = () => {
-        return (
-            <div>
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
-            </div>
-          );
-    }
+  const renderComments = () => {
+    if(post.errorComments) {
+      return (
+        <div>
+          <h3>Error loading comments</h3>
+        </div>
+      );
+    };
+
+    if(post.loadingComments) {
+      return (
+        <div>
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+        </div>
+      );
+    };
+
+    if(post.showingComments) {
+      return (
+        <div>
+          {post.map((comment) => (
+            <Comment comment={comment} key={comment.id}/>
+          ))}
+        </div>
+      );
+    };
+
+    return null;
+  }
     
     return(
         <Card>
@@ -34,11 +59,14 @@ export const Post = () => {
             </div>
             <div className='right'>
                <button 
-                
+                type='button'
+                onClick={() => onToggleComments(post.permalink)}
+                aria-label="Show comments"
                ><RiMessage3Line /></button>
             </div>
+
+            {renderComments()};
           </div>
-          {renderComments()}
         </div>
         </Card>
     )

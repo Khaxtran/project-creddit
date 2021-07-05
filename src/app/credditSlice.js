@@ -24,7 +24,7 @@ const credditSlice = createSlice({
             state.isLoading = false;
             state.posts = action.payload;
         },
-        getPostFailed(state) {
+        getPostsFailed(state) {
             state.isLoading = false;
             state.error = true;
         },
@@ -106,8 +106,8 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
     }
 };
 
-const selectPosts = state => state.reddit.posts;
-const selectSearchTerm = state => state.reddit.searchTerm;
+const selectPosts = state => state.creddit.posts;
+const selectSearchTerm = state => state.creddit.searchTerm;
 
 export const selectSelectedSubcreddit = state => state.reddit.selectedSubcreddit;
 
