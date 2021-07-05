@@ -106,3 +106,19 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
     }
 };
 
+const selectPosts = state => state.reddit.posts;
+const selectSearchTerm = state => state.reddit.searchTerm;
+
+export const selectSelectedSubcreddit = state => state.reddit.selectedSubcreddit;
+
+export const selectFilteredPosts = createSelector(
+    [selectPosts, selectSearchTerm],
+    (posts, searchTerm) => {
+        if(searchTerm !== '') {
+            return posts.filter(post => 
+                post.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        }
+
+        return posts;
+    }
+);
