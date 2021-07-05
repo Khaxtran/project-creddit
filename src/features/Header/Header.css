@@ -14,7 +14,7 @@ p {
     color: #222222;
 }
 
-button {
+.search-section button {
     border: none;
     background: none;
     cursor: pointer;

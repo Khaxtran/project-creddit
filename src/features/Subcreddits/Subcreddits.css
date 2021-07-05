@@ -1,6 +1,7 @@
-section {
+section, .subcreddit-card {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 h2 {

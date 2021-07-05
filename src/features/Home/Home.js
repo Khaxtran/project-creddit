@@ -4,6 +4,8 @@ import {Post} from '../Post/Post';
 
 export const Home = () => {
     return (
-        <Post />
+        <>
+            <Post />
+        </>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Card/Card.css';
+import './SubCard.css';
 
 export const SubCard = (props) => {
     return (
