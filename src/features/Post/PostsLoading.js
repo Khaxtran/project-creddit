@@ -28,8 +28,8 @@ export const PostLoading = () => {
                         </div>
 
                         <div className='center'>
-                            <Skeleton width='15ch' height='2ch' className='detail-1'/>
-                            <Skeleton width='10ch' height='2ch'className='detail-2'/>
+                            <Skeleton width='15ch' height='2ch'/>
+                            <Skeleton width='10ch' height='2ch'/>
                         </div>
 
                         <span className='right'>
