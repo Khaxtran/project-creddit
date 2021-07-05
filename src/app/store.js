@@ -1,7 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import credditReducer from './credditSlice';
 
 export const store = configureStore({
-  reducer: {
+  reducer: combineReducers({
+    creddit: credditReducer,
     
-  },
+  })
 });
