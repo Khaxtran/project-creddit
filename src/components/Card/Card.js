@@ -4,7 +4,6 @@ import './Card.css';
 const Card = (props) => {
   return (
     <div>
-      <h2>Heading</h2>
       <div className={`card ${props.className}`}>
         {props.children}
         
