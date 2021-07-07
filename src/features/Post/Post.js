@@ -10,7 +10,7 @@ import {RiMessage3Line} from 'react-icons/ri';
  
 export const Post = (props) => {
   const {post, onToggleComments} = props;
-  
+
 
   const renderComments = () => {
     if(post.errorComments) {
@@ -44,12 +44,12 @@ export const Post = (props) => {
 
     return null;
   }
-    
     return(
+     
       <article key={post.id}>
         <h2>{post.title}</h2>
         <Card>
-            <div className='post-image'>
+            <div className='post-image-container'>
               <img src={post.url} alt="" className="post-image" />
             </div>
 
@@ -70,10 +70,8 @@ export const Post = (props) => {
                     type='button'
                     onClick={() => onToggleComments(post.permalink)}
                     aria-label="Show comments"
-                  ><RiMessage3Line /></button>
+                  ><RiMessage3Line /> {renderComments()}</button>
                 </div>
-
-                  {renderComments()};
                 </div>
             </div>
         </Card>

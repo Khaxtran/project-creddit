@@ -19,7 +19,9 @@ export const Subcreddits = () => {
             <SubCard className='subcreddit-card'>
                 <ul className='subcreddits-list'>
                     {subcreddits.map((subcreddit) => (
-                        <li className='subcreddit-items'
+                        <li className={`${
+                            selectedSubcreddit === subcreddit.url && 'subcreddit-items'
+                          }`}
                             key={subcreddits.id}>
                             <button
                                 className='subcreddit-button'

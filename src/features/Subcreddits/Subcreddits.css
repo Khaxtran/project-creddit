@@ -31,7 +31,9 @@ h2 {
 }
 
 .subcreddit-items {
-    
+    border-left: 10px solid #5A6CB7;
+    background: #9ca9e0ca;
+    border-radius: 10px;
 }
 
 .subcreddit-button {

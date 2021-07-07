@@ -20,9 +20,10 @@ const credditSlice = createSlice({
             state.isLoading = true;
             state.error = false;
         },
-        getPostSuccess(state, action) {
+        getPostsSuccess(state, action) {
             state.isLoading = false;
             state.posts = action.payload;
+           
         },
         getPostsFailed(state) {
             state.isLoading = false;
@@ -90,6 +91,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
             loadingComments: false,
             error: false,
         }))
+       
         dispatch(getPostsSuccess(postsWithMetadata));
     } catch (error) {
         dispatch(getPostsFailed());
@@ -106,7 +108,7 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
     }
 };
 
-const selectPosts = state => state.creddit.posts;
+export const selectPosts = state => state.creddit.posts;
 const selectSearchTerm = state => state.creddit.searchTerm;
 
 export const selectSelectedSubcreddit = state => state.creddit.selectedSubcreddit;
@@ -114,6 +116,7 @@ export const selectSelectedSubcreddit = state => state.creddit.selectedSubcreddi
 export const selectFilteredPosts = createSelector(
     [selectPosts, selectSearchTerm],
     (posts, searchTerm) => {
+        console.log(searchTerm)
         if(searchTerm !== '') {
             return posts.filter(post => 
                 post.title.toLowerCase().includes(searchTerm.toLowerCase()));

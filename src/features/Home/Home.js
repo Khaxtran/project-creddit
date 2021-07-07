@@ -39,6 +39,7 @@ export const Home = () => {
     }
 
     if(error) {
+        console.log(error);
         return (
             <div>
                 <h2>Failed to load posts.</h2>
