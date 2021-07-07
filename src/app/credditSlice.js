@@ -109,7 +109,7 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
 const selectPosts = state => state.creddit.posts;
 const selectSearchTerm = state => state.creddit.searchTerm;
 
-export const selectSelectedSubcreddit = state => state.reddit.selectedSubcreddit;
+export const selectSelectedSubcreddit = state => state.creddit.selectedSubcreddit;
 
 export const selectFilteredPosts = createSelector(
     [selectPosts, selectSearchTerm],

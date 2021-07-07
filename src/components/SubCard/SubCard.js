@@ -5,7 +5,7 @@ export const SubCard = (props) => {
     return (
         <div>
             <h2>Subcreddits</h2>
-            <div className={`card ${props.className}`}>{props.children}</div>
+            <div className={` ${props.className}`}>{props.children}</div>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment'
 import './Post.css';
+import {Avatar} from '../Avatar/Avatar';
 import {Comment} from '../Comment/Comment';
 import Skeleton from 'react-loading-skeleton';
 import Card from '../../components/Card/Card';
@@ -60,7 +61,8 @@ export const Post = (props) => {
                   <button><TiArrowDownOutline /></button>
                 </div>
                 <div className='center'>
-                  <p className='user'>Username</p>
+                  <Avatar name={post.author} />
+                  <span className="user">{post.author}</span>
                   <span>{moment.unix(post.created_utc).fromNow()}</span>
                 </div>
                 <div className='right'>

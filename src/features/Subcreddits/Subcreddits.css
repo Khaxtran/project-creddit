@@ -8,5 +8,52 @@ h2 {
 
 }
 .subcreddit-card {
-    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background: fixed;
+    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.151);
+    margin-bottom: 4rem;
+    border-radius: 10px;
+    transition: box-shadow 0.1s ease-in;
+    color: black;
+}
+
+.subcreddit-card:hover {
+    box-shadow: 0px 0px 20px 10px rgba(172, 172, 172, 0.246);
+  }
+
+.subcreddits-list {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.subcreddit-items {
+    
+}
+
+.subcreddit-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.subcreddit-button:hover {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 10px rgba(207, 207, 207, 0.253);
+}
+
+.subcreddit-img {
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    border-radius: 50%;
 }
