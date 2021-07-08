@@ -17,12 +17,12 @@ p {
     flex-direction: column;
     justify-content: space-between;
     width: 85%;
-    height: 30rem;
+    height: auto;
     background: fixed;
-    background-color: #dadada;
+    background-color: #f6f6f6;
     box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.151);
     margin-bottom: 7rem;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 0px 0px 10px 10px;
     transition: box-shadow 0.1s ease-in;
     color: black;
   }

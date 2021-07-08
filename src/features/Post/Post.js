@@ -9,7 +9,7 @@ import {TiArrowDownOutline, TiArrowUpOutline} from 'react-icons/ti';
 import {RiMessage3Line} from 'react-icons/ri';
  
 export const Post = (props) => {
-  const {post, onToggleComments} = props;
+  const {post, onToggleComment} = props;
 
 
   const renderComments = () => {
@@ -34,8 +34,8 @@ export const Post = (props) => {
 
     if(post.showingComments) {
       return (
-        <div>
-          {post.map((comment) => (
+        <div className='comment-section'>
+          {post.comments.map((comment) => (
             <Comment comment={comment} key={comment.id}/>
           ))}
         </div>
@@ -49,31 +49,38 @@ export const Post = (props) => {
       <article key={post.id}>
         <h2>{post.title}</h2>
         <Card>
-            <div className='post-image'>
-              <img src={post.url} alt="" className="post-image" />
-            </div>
+
+            
+            <img src={post.url} alt="" className="post-image" />
+            
 
             <div className='interaction-bar'>
-              <div className='button-container'>
-                <div className='left'>
-                  <button><TiArrowUpOutline /></button>
-                  <p>14.5k</p>
-                  <button><TiArrowDownOutline /></button>
-                </div>
-                <div className='center'>
-                  <Avatar name={post.author} />
-                  <span className="user">{post.author}</span>
-                  <span>{moment.unix(post.created_utc).fromNow()}</span>
-                </div>
-                <div className='right'>
-                  <button 
-                    type='button'
-                    onClick={() => onToggleComments(post.permalink)}
-                    aria-label="Show comments"
-                  ><RiMessage3Line /> {renderComments()}</button>
-                </div>
-                </div>
-            </div>
+                <div className='button-container'>
+                  <div className='left'>
+                    <button><TiArrowUpOutline /></button>
+                    <p>14.5k</p>
+                    <button><TiArrowDownOutline /></button>
+                  </div>
+
+                  <div className='center'>
+                    <Avatar name={post.author} />
+                    <span className="user">{post.author}</span>
+                    <span className='time'>{moment.unix(post.created_utc).fromNow()}</span>
+                  </div>
+
+                  <div className='right'>
+                    <button 
+                      type='button'
+                      onClick={() => onToggleComment(post.permalink)}
+                      aria-label="Show comments"
+                    ><RiMessage3Line /></button>
+                  </div>
+                </div>  
+              </div>
+              <div>
+                {renderComments()} 
+              </div>
+          
         </Card>
       </article>
         
