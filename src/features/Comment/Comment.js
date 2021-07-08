@@ -9,10 +9,12 @@ export const Comment = (props) => {
     return (
         <div className='comment'>
             <div className='comment-data'>
-                <Avatar name={comment.author} />
-                <p>{comment.author}</p>
-                <p>{moment.unix(comment.created_utc).fromNow()}</p>
-                <p>{comment.body}</p>
+                <div className='user-info'>
+                    <Avatar name={comment.author}  />
+                    <p className='username'>{comment.author}</p>
+                </div>
+                <p className='comment-body'>{comment.body}</p>
+                <p className='comment-time'>{moment.unix(comment.created_utc).fromNow()}</p>
             </div>
             <ReactMarkdown source={comment.body} />
         </div>

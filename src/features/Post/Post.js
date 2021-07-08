@@ -23,11 +23,11 @@ export const Post = (props) => {
 
     if(post.loadingComments) {
       return (
-        <div>
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
+        <div className="loading-comments">
+          <Skeleton height={20}/>
+          <Skeleton height={20}/>
+          <Skeleton height={20}/>
+          <Skeleton height={20}/>
         </div>
       );
     };
@@ -73,7 +73,8 @@ export const Post = (props) => {
                       type='button'
                       onClick={() => onToggleComment(post.permalink)}
                       aria-label="Show comments"
-                    ><RiMessage3Line /></button>
+                    ><RiMessage3Line/></button>
+                    <p>{post.num_comments}</p>
                   </div>
                 </div>  
               </div>

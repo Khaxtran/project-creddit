@@ -1,6 +1,45 @@
 .comment {
     background-color: white;
+    width: 90%;
+    height: auto !important;
+    margin: 15px auto;
+    border-radius: 10px;
+    transition: box-shadow 0.1s ease-in;
+}
+
+.comment:hover {
+    box-shadow: 0px 0px 15px 5px rgba(165, 165, 165, 0.246);
 }
 
 .comment-data {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin: none;
+    padding: none;
+}
+
+.username {
+    color: blue;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.comment-time {
+    text-align: right;
+    color:rgb(102, 101, 101);
+    font-size: 14px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.comment-body {
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
