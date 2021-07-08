@@ -49,7 +49,7 @@ export const Post = (props) => {
       <article key={post.id}>
         <h2>{post.title}</h2>
         <Card>
-            <div className='post-image-container'>
+            <div className='post-image'>
               <img src={post.url} alt="" className="post-image" />
             </div>
 

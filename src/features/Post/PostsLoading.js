@@ -15,15 +15,15 @@ export const PostLoading = () => {
             <h2><Skeleton width={getRandomNumber(100, 200)}  /></h2>
             
             <div>
-                <div>
-                    <Skeleton height={250} />
+                <div className='loading-img-container'>
+                    <Skeleton height={250} width={950}/>
                 </div>
 
-                <div className='interaction-bar'>
+                <div className='interaction-bar interaction-bar-loading'>
                     <div className='button-container'>
                         <div className='left'>
                             <button><TiArrowUpOutline /></button>
-                                <Skeleton className="post-votes-value-loading"/>
+                                <Skeleton className="post-votes-value-loading" />
                             <button><TiArrowDownOutline /></button>
                         </div>
 

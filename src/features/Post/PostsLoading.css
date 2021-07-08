@@ -2,3 +2,11 @@
     width: 5ch !important;
     height: 2ch;
   }
+
+  .interaction-bar-loading {
+    width: 950px;
+  }
+  
+  .loading-img-container {
+    border-radius: none;
+  }
