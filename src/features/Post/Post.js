@@ -10,6 +10,7 @@ import {TiArrowDownOutline,
         TiArrowUpOutline,
         TiArrowUpThick} from 'react-icons/ti';
 import {RiMessage3Line} from 'react-icons/ri';
+import shortenNumber from '../../util/shortenNumber';
  
 export const Post = (props) => {
   const [voteValue, setVoteValue] = useState(0);
@@ -38,6 +39,16 @@ export const Post = (props) => {
     }
     return <TiArrowDownOutline/>
   }
+
+  const getVoteType = () => {
+    if (voteValue === 1) {
+      return 'up-vote';
+    }
+    if (voteValue === -1) {
+      return 'down-vote';
+    }
+    return '';
+  };
 
   const renderComments = () => {
     if(post.errorComments) {
@@ -89,7 +100,9 @@ export const Post = (props) => {
                       onClick={() => onHandleVote(1)}
                       aria-label="Up vote"
                     >{renderUpVote()}</button>
-                    <p>14.5k</p>
+                    <p className={`post-votes-value ${getVoteType()}`}>
+                      {shortenNumber(post.ups, 1)}
+                    </p>
                     <button
                       type='button'
                       onClick={() => onHandleVote(-1)}

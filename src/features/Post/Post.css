@@ -63,6 +63,11 @@
     font-size: 1.6rem;
     animation: spin 0.3s ease;
   }
+
+  .post-votes-value {
+    font-size: 1rem;
+    animation: none;
+  }
   
   .center .user {
     padding: 0px 10px;
