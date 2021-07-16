@@ -1,16 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import moment from 'moment'
 import './Post.css';
 import {Avatar} from '../Avatar/Avatar';
 import {Comment} from '../Comment/Comment';
 import Skeleton from 'react-loading-skeleton';
 import Card from '../../components/Card/Card';
-import {TiArrowDownOutline, TiArrowUpOutline} from 'react-icons/ti';
+import {TiArrowDownOutline,
+        TiArrowDownThick,
+        TiArrowUpOutline,
+        TiArrowUpThick} from 'react-icons/ti';
 import {RiMessage3Line} from 'react-icons/ri';
  
 export const Post = (props) => {
+  const [voteValue, setVoteValue] = useState(0);
   const {post, onToggleComment} = props;
 
+  const onHandleVote = (newValue) => {
+    if(newValue === voteValue) {
+      setVoteValue(0);
+    }else if(newValue === 1) {
+      setVoteValue(1);
+    }else {
+      setVoteValue(-1);
+    }
+  }
+
+  const renderUpVote = () => {
+    if(voteValue === 1) {
+      return <TiArrowUpThick/>
+    }
+    return <TiArrowUpOutline/>
+  }
+
+  const renderDownVote = () => {
+    if(voteValue === -1) {
+      return <TiArrowDownThick/>
+    }
+    return <TiArrowDownOutline/>
+  }
 
   const renderComments = () => {
     if(post.errorComments) {
