@@ -84,9 +84,19 @@ export const Post = (props) => {
             <div className='interaction-bar'>
                 <div className='button-container'>
                   <div className='left'>
-                    <button><TiArrowUpOutline /></button>
+                    <button
+                      type='button'
+                      onClick={() => onHandleVote(1)}
+                      aria-label="Up vote"
+                    >{renderUpVote()}</button>
                     <p>14.5k</p>
-                    <button><TiArrowDownOutline /></button>
+                    <button
+                      type='button'
+                      onClick={() => onHandleVote(-1)}
+                      aria-label="Down vote"
+                    > 
+                      {renderDownVote()}
+                    </button>
                   </div>
 
                   <div className='center'>
