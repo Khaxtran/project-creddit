@@ -27,14 +27,14 @@ export const Post = (props) => {
 
   const renderUpVote = () => {
     if(voteValue === 1) {
-      return <TiArrowUpThick/>
+      return <TiArrowUpThick className="up-vote"/>
     }
     return <TiArrowUpOutline/>
   }
 
   const renderDownVote = () => {
     if(voteValue === -1) {
-      return <TiArrowDownThick/>
+      return <TiArrowDownThick className='down-vote'/>
     }
     return <TiArrowDownOutline/>
   }
