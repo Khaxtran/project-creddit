@@ -6,7 +6,7 @@ const initialState = {
     error: false,
     isLoading: false,
     searchTerm: '',
-    selectedSubcreddit: '/r/pics'
+    selectedSubcreddit: '/r/dog'
 }
 
 const credditSlice = createSlice({
